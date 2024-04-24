@@ -1,0 +1,87 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --fondo: rgb(230, 230, 230);
+    --sombra_oscura: rgb(197, 197, 197);
+    --sombra-clara: white;
+}
+
+.pestanas {
+    height: 100vh;
+    background-color: var(--fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container{
+    border-radius: 1rem;
+    border: 1px solid rgba(240, 240, 240, 0.616);
+    box-shadow: 5px 5px 10px 5px var(--sombra_oscura),
+                -5px -5px 30px 8px var(--sombra-clara);
+    width: 55rem;
+    height: 20rem;
+    padding: 1rem;
+    gap:1rem;
+}
+
+.pestanasButton {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.pestanasButton__button {
+    background-color: var(--fondo);
+    border-radius: 0.6rem;
+    border: 1px solid rgba(240, 240, 240, 0.616);
+    box-shadow: 5px 5px 10px 5px var(--sombra_oscura),
+                -3px -2px 10px 5px var(--sombra-clara);
+    font-size: 1rem;
+    background-color: var(--fondo);
+    text-align: center;
+    padding: 0.2rem;
+    width: 15rem;
+    height: 3rem;
+}
+
+.pestanasButton__button:hover {
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px 5px inset var(--sombra_oscura),
+                -3px -2px 10px 5px inset var(--sombra-clara);
+}
+
+.pestanasButton__button.active {
+    font-weight: bold;
+    box-shadow: 5px 5px 10px 5px inset var(--sombra_oscura),
+                -3px -2px 10px 5px inset var(--sombra-clara);
+}
+
+.pestanasContent__texto {
+    padding: 2rem;
+    font-size: 1.1rem;
+    text-align: justify;
+    display: none;
+    opacity: 0;
+    margin: 0;
+}
+
+.pestanasContent__texto.active {
+    display: block;
+    opacity: 1;
+    animation: mostrar 1s ease-in-out;
+}
+
+@keyframes mostrar {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
